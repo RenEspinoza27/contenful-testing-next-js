@@ -3,7 +3,6 @@ import Image from "next/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Skeleton from "../../components/Skeleton";
 
-
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENFUL_ACCESS_KEY,
@@ -30,7 +29,16 @@ export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: 'recipe',
     'fields.slug': params.slug
-  })
+  });
+
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
 
   return {
     props: { recipe: items[0] },
