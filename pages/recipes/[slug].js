@@ -37,8 +37,9 @@ export async function getStaticProps({ params }) {
 }
 
 export default function RecipeDetails({ recipe }) {
-  console.log('see recipe', recipe);
+
   const { featuredImage, title, cookingTime, ingredients, method } = recipe.fields;
+  
   return (
     <div>
       <div className="banner">
