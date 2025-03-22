@@ -8,8 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "10.0.8",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "@contentful/rich-text-react-renderer": "^16.0.1",
+    "contentful": "^11.5.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "next": "^15.2.3",
+    "postcss": "^8.5.3"
   }
 }
