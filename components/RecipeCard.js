@@ -7,8 +7,8 @@ export const RecipeCard = ({ recipe }) => {
       <div className="featured">
         <Image
           src={`https:${thumbnail.fields.file.url}`}
-          width={thumbnail.fields.file.details.image.width <= 500 ? thumbnail.fields.file.details.image.width : 500}
-          height={thumbnail.fields.file.details.image.height <= 300 ? thumbnail.fields.file.details.image.height : 300}
+          width={500}
+          height={300}
         />
       </div>
       <div className="content">
